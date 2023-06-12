@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main>
+  <div class="container">
+    <div class="justify-content-center align-items-center w-75 mx-auto">
+      <div class="card p-4 d-flex justify-content-center">
+        <a id="nav-icon" class="btn btn-default btn-sm" href="{{ url_for('history_list') }}" aria-label="View History"
+          title="View History">
+          <i class="fa-history fa-solid fa-lg float-left mr-2 my-2"></i>View History</a>
+        <div class="class-header mx-auto">
+          <h1>SkillsAssist</h1>
+        </div>
+        <div class="card-body">
+          <h4>Select a topic:</h4>
+          <div class="container-fluid">
+            <div class="row flex-wrap">
+              {% for topic in topics %}
+              <div class="col-md-4 my-1 d-flex align-items-stretch" onclick="selectTopic({{ topic.id }})">
+                <button class="btn btn-secondary btn-block topic-button">
+                  {{ topic.name }}
+                </button>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

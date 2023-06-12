@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+  <div class="justify-content-center align-items-center w-75 mx-auto">
+    <div class="card p-4 d-flex justify-content-center">
+      <a id="nav-icon" class="btn btn-default btn-sm" href="{{ url_for('index') }}" aria-label="Return Home"
+        title="Return Home">
+        <i class="fa-solid fa-house fa-xl float-left mr-2"></i>
+      </a>
+      <div class="card-body">
+        <div id="question"></div>
+        <div id="result" style="display: none;" class="alert" role="alert"></div>
+        <div id="explanation"></div>
+        <div class="card-footer">
+          <h5>Topic: <span id="topic-name"></span></h5>
+          <h5>Accuracy: <span id="accuracy-value">0%</span></h5>
+          <h5 id="progress-tracker">Progress: </h5>
+          <div class="progress">
+            <div id="progress-bar" class="progress-bar progress-bar-info" role="progressbar" style="width: 0%;"
+              aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+          </div>
+          <a id="nextButton" class="btn btn-primary my-2" style="display: none;" onclick="getNextQuestion()">Next
+            Question</a>
+        </div>
+        <script>
+          // Call the initial function to start the quiz
+          startQuiz();
+        </script>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

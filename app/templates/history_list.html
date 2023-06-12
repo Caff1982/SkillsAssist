@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main>
+  <div class="container">
+    <div class="justify-content-center align-items-center w-75 mx-auto">
+      <div class="card p-4 d-flex justify-content-center">
+        <a id="nav-icon" class="btn btn-default btn-sm" href="{{ url_for('index') }}" aria-label="Return Home"
+          title="Return Home">
+          <i class="fa-solid fa-house fa-xl float-left mr-2"></i>
+        </a>
+        <div class="class-header mx-auto">
+          <h1>Past Results</h1>
+        </div>
+        <div class="card-body">
+          {% if topics|length > 0 %}
+          <table class="table table-dark table-striped history-table mx-auto text-center">
+            <thead>
+              <tr>
+                <th>Topic</th>
+                <th>Last Session</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for topic in topics %}
+              <tr>
+                <td>{{ topic.name }}</td>
+                <td>{{ topic.last_seen|datetime_format }}</td>
+                <td><a href="/history/{{ topic.id }}" class="btn btn-secondary btn-sm">View</a></td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          {% else %}
+          <h5 class="text-center">No result found.</h5>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}

@@ -1,0 +1,67 @@
+body {
+	background-color: #0d1117;
+	color: #ffffffd9; /* White with 85% opacity */
+}
+.card {
+	background-color: #343a40;
+	overflow: hidden;
+}
+.topic-button:hover {
+	transition: background-color 0.5s;
+	background-color: #007bff;
+}
+.list-group-item {
+	background-color: #343a40;
+	border-color: #9FA6B2;
+	border-radius: 5px;
+	border-width: 2px;
+	padding: 10px;
+}
+.list-group-item:hover {
+	cursor: pointer;
+	transition: background-color 0.5s;
+	background-color: #212529;
+}
+.progress {
+    height: 30px;
+    font-weight: bold;
+    background-color: #6c757d;
+}
+#explanation-header {
+	font-size: 1.1rem;
+	text-transform: capitalize;
+}
+.history-table {
+	width: 80%;
+}
+.bar-graph {
+	margin-top: 2rem;
+	width: 90%;
+}
+img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+#nav-icon {
+	color: #ffffffd9;
+	text-align: left;
+}
+#nav-icon:hover {
+	color: #ffffffb3;
+}
+.dropdown-menu {
+	background-color: #343a40;
+	border-color: #9FA6B2;
+	border-radius: 5px;
+	border-width: 2px;
+	max-height: 500px;
+	overflow-y: auto; 
+}
+.dropdown-item {
+	color: #ffffffd9;
+}
+.dropdown-item:hover {
+	color: #ffffffb3;
+	background-color: #007bff;
+}
