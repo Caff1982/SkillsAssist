@@ -70,7 +70,7 @@ class Topic(db.Model):
         Return a list of all questions for this topic,
         sorted by their EMA score.
         """
-        return self.questions.order_by(Question.ema_score.desc()).all()
+        return self.questions.order_by(Question.ema_score).all()
 
     def get_number_of_questions(self):
         """
